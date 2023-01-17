@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Acme.Commo
+namespace Acme.Common
 {
     /// <summary>
     /// Provides services to send email.
