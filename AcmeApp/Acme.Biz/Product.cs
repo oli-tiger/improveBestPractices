@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.Common;
+using static Acme.Common.LoggingService;
 
 namespace Acme.Biz
 {
@@ -48,6 +50,14 @@ namespace Acme.Biz
 
         public string SayHello()
         {
+            var vendor = new Vendor();
+            vendor.SendWelcomeEmail("Message from Email");
+
+            var emailService = new EmailService();
+            emailService.SendMessage("New Product", this.ProductName, "sales@abc.com");
+
+            var result = LogAction("saying hello");
+
             return "Hello " + ProductName + " (" + ProductId + "): " + Description;
         }
     }
